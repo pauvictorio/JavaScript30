@@ -67,10 +67,8 @@
     key.classList.add('playing');
   });
 
-  window.addEventListener('keyup', e => {
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    if (!key) return;
-    key.classList.remove('playing');
+  window.addEventListener('transitionend', e => {
+    e.target.classList.remove('playing');
   });
 </script>
 
