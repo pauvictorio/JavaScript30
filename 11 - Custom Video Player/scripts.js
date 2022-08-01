@@ -72,4 +72,4 @@ progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mousedown', () => mousedown = false);
 
 fullscreen.addEventListener('click', makeFullScreen);
-fullscreen.addEventListener('dbclick', makeFullScreen);
+player.addEventListener('dblclick', makeFullScreen);
