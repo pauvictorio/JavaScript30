@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
 <script>
+  
+  let pressed = [];
+  const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
+
+  function arraysEqual(array1, array2) {
+    return JSON.stringify(array1) == JSON.stringify(array2);
+  }
+
+  window.addEventListener('keyup', e => {
+    pressed.push(e.key)
+    if (arraysEqual(pressed, KONAMI)) {
+      console.log('OVER 9000!');
+      pressed = [];
+    }
+    setTimeout(() => {
+      pressed = []
+    }, 3000);
+  });
+
 </script>
 </body>
 </html>
